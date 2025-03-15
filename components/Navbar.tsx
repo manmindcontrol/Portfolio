@@ -1,0 +1,93 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faInstagram,
+  faGitlab,
+} from "@fortawesome/free-brands-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 h-[80px] z-50  text-white flex items-center px-6 md:px-16 text-4xl font-bold backdrop-blur-md ">
+      {/* Logo */}
+      <Link href="/" className="flex items-center gap-1 w-full md:w-fit">
+        <Image
+          src="/thunder.png"
+          alt="Genexy Logo"
+          width={50}
+          height={50}
+          className="transition-all cursor-pointer rounded-xl p-2 hover:animate-spin duration-300 "
+        />
+        <h1 className="whitespace-nowrap md:inline font-bold text-white transition-transform duration-300 transform hover:scale-110">
+          Samuel<span className="text-cyan-500">.</span>
+        </h1>
+      </Link>
+
+      {/* Desktop Social Links */}
+      <div className="ml-auto hidden md:flex items-center gap-5 text-3xl">
+        <Link href="/" className="hover:text-cyan-500 transition duration-200">
+          <FontAwesomeIcon
+            icon={faGitlab}
+            className="text-white transition-transform duration-300 transform hover:scale-125"
+          />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
+          className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125 "
+        >
+          <FontAwesomeIcon icon={faLinkedin} className="text-white" />
+        </Link>
+        <Link
+          href="https://www.instagram.com/samuel_rychvalsky/"
+          className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
+        >
+          <FontAwesomeIcon icon={faInstagram} className="text-white" />
+        </Link>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden text-white text-3xl ml-auto"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+      </button>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-[80px] left-0 w-full  flex flex-col items-center py-4 space-y-4 md:hidden shadow-lg">
+          <Link
+            href="https://www.github.com/manmindcontrol"
+            className="text-lg text-white hover:text-cyan-500 transition"
+          >
+            <FontAwesomeIcon icon={faGitlab} className="mr-2" />
+            GitLab
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
+            className="text-lg text-white hover:text-cyan-500 transition"
+          >
+            <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
+            LinkedIn
+          </Link>
+          <Link
+            href="https://www.instagram.com/samuel_rychvalsky/"
+            className="text-lg text-white hover:text-cyan-500 transition"
+          >
+            <FontAwesomeIcon icon={faInstagram} className="mr-2" />
+            Instagram
+          </Link>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
