@@ -39,7 +39,10 @@ const Navbar = () => {
         >
           Resume
         </Link>
-        <Link href="/" className="hover:text-cyan-500 transition duration-200">
+        <Link
+          href="https://www.github.com/manmindcontrol"
+          className="hover:text-cyan-500 transition duration-200"
+        >
           <FontAwesomeIcon
             icon={faGithub}
             className="text-white transition-transform duration-300 transform hover:scale-125"

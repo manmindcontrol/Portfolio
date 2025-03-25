@@ -1,13 +1,11 @@
 "use client";
 
-import FallingStars from "../FallingStars";
-
 export default function Home() {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <main className="w-screen min-h-screen  overflow-hidden">
+    <main className="w-screen min-h-screen  overflow-hidden" id="landing">
       <div className="flex flex-col items-center text-center md:text-left md:items-start px-6 py-10 md:px-40 mt-40 md:mt-60">
         {/* Heading */}
         <h1 className="text-4xl md:text-6xl text-white font-semibold">
