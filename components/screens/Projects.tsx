@@ -80,10 +80,16 @@ export default function ProjectSlider() {
     <>
       <section
         id="projects"
-        className="relative overflow-hidden w-full min-h-screen flex flex-col items-center bg-gradient-to-r from-[#0f172a] to-[#334155] p-8 md:p-16 gap-32"
+        className="relative overflow-hidden w-full min-h-screen flex flex-col items-center bg-gradient-to-r from-slate-900 to-sky-700 p-8 md:p-16 gap-32"
       >
         <FallingStars />
-        <h1 className="text-white font-semibold text-4xl md:text-6xl">
+        {/* Top Shadow Fade */}
+        <div className="pointer-events-none absolute top-0 left-0 w-full h-32 z-10 bg-gradient-to-b from-black/70 to-transparent" />
+
+        {/* Bottom Shadow Fade */}
+        <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 z-10 bg-gradient-to-t from-black/70 to-transparent" />
+
+        <h1 className="text-white font-semibold text-4xl md:text-6xl mt-8">
           Projects
         </h1>
         {/* Ensure column layout by default, switching to row on XL screens */}

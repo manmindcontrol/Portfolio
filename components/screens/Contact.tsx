@@ -46,9 +46,8 @@ export default function ContactForm() {
     <>
       <section
         id="contact"
-        className="relative overflow-hidden w-full h-screen flex flex-col items-center justify-start bg-gradient-to-r from-[#0f172a] to-[#334155] p-8 pt-8"
+        className="relative overflow-hidden w-full h-screen flex flex-col items-center justify-center  p-8 pt-8"
       >
-        <FallingStars />
         <h2 className="text-4xl md:text-6xl text-white font-semibold mb-10">
           Contact me
         </h2>
