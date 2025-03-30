@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="ml-auto hidden md:flex items-center gap-5 text-3xl">
         <Link
           href="/resume"
-          className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
+          className="hover:text-cyan-500 font-normal transition-transform duration-300 transform hover:scale-125"
         >
           Resume
         </Link>
