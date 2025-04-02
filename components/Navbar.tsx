@@ -14,6 +14,7 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const handleMenuClick = () => setMenuOpen(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 h-[80px] z-50  text-white flex items-center px-6 md:px-16 text-4xl font-bold backdrop-blur-sm ">
@@ -72,30 +73,30 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="absolute top-[80px] left-0 w-full  flex flex-col items-center py-4 space-y-4 md:hidden shadow-lg">
+        <div className="absolute top-[80px] right-5 w-2/4 flex flex-col items-center py-4 space-y-4 md:hidden bg-slate-200 outline-2 outline-black  opacity-90 rounded-lg shadow-xl backdrop-filter backdrop-blur-md">
           <Link
             href="/resume"
-            className="text-lg hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
+            className="text-lg text-black  hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
           >
             Resume
           </Link>
           <Link
             href="https://www.github.com/manmindcontrol"
-            className="text-lg text-white hover:text-cyan-500 transition"
+            className="text-lg text-black hover:text-cyan-500 transition"
           >
             <FontAwesomeIcon icon={faGithub} className="mr-2" />
             GitHub
           </Link>
           <Link
             href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
-            className="text-lg text-white hover:text-cyan-500 transition"
+            className="text-lg text-black hover:text-cyan-500 transition"
           >
             <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
             LinkedIn
           </Link>
           <Link
             href="https://www.instagram.com/samuel_rychvalsky/"
-            className="text-lg text-white hover:text-cyan-500 transition"
+            className="text-lg text-black hover:text-cyan-500 transition"
           >
             <FontAwesomeIcon icon={faInstagram} className="mr-2" />
             Instagram

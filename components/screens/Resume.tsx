@@ -23,7 +23,7 @@ function Resume() {
   return (
     <div className="pt-20 px-4 pb-12 max-w-4xl mx-auto">
       {/* Header */}
-      <div className="bg-gray-800 rounded-lg p-8 mb-8">
+      <div className="bg-gray-800 rounded-lg p-8 mb-8 shadow-gray-900 shadow-xl">
         <div className="flex justify-between items-start mb-6">
           <div>
             <h1 className="text-3xl text-white font-bold mb-2">
@@ -34,10 +34,10 @@ function Resume() {
           <a
             href="/resume.pdf"
             download
-            className="flex items-center text-white font-normal gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md  text-lg hover:opacity-90 transition-transform duration-300 transform hover:scale-110"
+            className="flex items-center text-white font-normal gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md text-lg hover:opacity-90 transition-transform duration-300 transform hover:scale-110"
           >
             <FontAwesomeIcon icon={faDownload} />
-            Download PDF
+            <span className="hidden sm:inline">Download PDF</span>
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
@@ -61,7 +61,7 @@ function Resume() {
       </div>
 
       {/* Summary */}
-      <section className="bg-gray-800 rounded-lg p-8 mb-8">
+      <section className="bg-gray-800 rounded-lg p-8 mb-8 shadow-gray-900 shadow-xl">
         <h2 className="text-2xl font-bold mb-4 text-white flex items-center gap-2">
           <FontAwesomeIcon icon={faBook} className="text-sky-500" />
           Professional Summary
@@ -74,7 +74,7 @@ function Resume() {
       </section>
 
       {/* Experience */}
-      <section className="bg-gray-800 rounded-lg p-8 mb-8">
+      <section className="bg-gray-800 rounded-lg p-8 mb-8 shadow-gray-900 shadow-xl">
         <h2 className="text-2xl text-white font-bold mb-6 flex items-center gap-2">
           <FontAwesomeIcon icon={faBriefcase} className="text-sky-500" />
           Work Experience
@@ -82,7 +82,7 @@ function Resume() {
 
         <div className="space-y-8">
           <div>
-            <h3 className="text-xl text-gray-400 font-semibold mb-1">
+            <h3 className="text-xl text-gray-200 font-semibold mb-1">
               Junior Fronend Developer
             </h3>
             <p className="text-gray-400 mb-2">
@@ -113,7 +113,7 @@ function Resume() {
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-1 text-gray-400">
+            <h3 className="text-xl font-semibold mb-1 text-gray-200">
               Intership as translator
             </h3>
             <p className="text-gray-300 mb-2">CABO s.r.o • 02. 2022- 05.2022</p>
@@ -125,7 +125,7 @@ function Resume() {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-1 text-gray-400">
+            <h3 className="text-xl font-semibold mb-1 text-gray-200">
               Intership as translator
             </h3>
             <p className="text-gray-300 mb-2">Karpatská nadácia • 2022</p>
@@ -146,7 +146,7 @@ function Resume() {
       </section>
 
       {/* Skills */}
-      <section className="bg-gray-800 rounded-lg p-8 mb-8">
+      <section className="bg-gray-800 rounded-lg p-8 mb-8 shadow-gray-900 shadow-xl">
         <h2 className="text-2xl text-white font-bold mb-6 flex items-center gap-2">
           <FontAwesomeIcon icon={faCode} className="text-sky-500 w-6 h-6" />
           Technical Skills
@@ -183,7 +183,7 @@ function Resume() {
       </section>
 
       {/* Education */}
-      <section className="bg-gray-800 rounded-lg p-8">
+      <section className="bg-gray-800 rounded-lg p-8 shadow-gray-900 shadow-xl">
         <h2 className="text-2xl text-white font-bold mb-6 flex items-center gap-2">
           <FontAwesomeIcon icon={faBook} className="text-sky-500" />
           Education
