@@ -32,7 +32,7 @@ function Resume() {
             <h2 className="text-xl text-gray-400">Junior Frontend Developer</h2>
           </div>
           <a
-            href="/CV.pdf"
+            href="/resume.pdf"
             download
             className="flex items-center text-white font-normal gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md text-lg hover:opacity-90 transition-transform duration-300 transform hover:scale-110"
           >

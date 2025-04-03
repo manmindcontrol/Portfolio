@@ -33,7 +33,7 @@ const Navbar = () => {
       {/* Desktop Social Links */}
       <div className="ml-auto hidden md:flex items-center gap-5 text-3xl">
         <Link
-          href="/CV"
+          href="/resume"
           className="hover:text-cyan-500 font-normal transition-transform duration-300 transform hover:scale-125"
         >
           CV
@@ -73,7 +73,7 @@ const Navbar = () => {
       {menuOpen && (
         <div className="absolute top-[80px] right-5 w-2/4 flex flex-col items-center py-4 space-y-4 md:hidden bg-slate-200 outline-2 outline-black  opacity-90 rounded-lg shadow-xl backdrop-filter backdrop-blur-md">
           <Link
-            href="/CV"
+            href="/resume"
             className="text-lg text-black  hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
           >
             CV
