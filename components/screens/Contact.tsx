@@ -2,7 +2,6 @@
 
 import { useState, ChangeEvent, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
-import FallingStars from "../FallingStars";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
