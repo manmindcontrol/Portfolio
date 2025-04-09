@@ -23,7 +23,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Ejoin connectors",
+    title: "Ejoin charging connectors",
     description:
       "Charging connectors showcased at the EJOIN gas station. I was responsible for bringing the design to life on the frontend and developing the API to ensure smooth functionality.",
     technologies: "Next.js, React, Typescript, TailwindCSS, API",
@@ -45,7 +45,7 @@ const projects = [
     id: 4,
     title: "Bookni",
     description:
-      "Beautiful and responsive mobile applications with sleek UI design.",
+      "Web application for booking events and personalities. Responsible for frontend development, UI/UX design, and implementation of key functionality.",
     technologies: "Next.js, React, Typescript, TailwindCSS",
     image: "/bookni.png",
     liveLink: "/",
@@ -53,9 +53,9 @@ const projects = [
   },
   {
     id: 5,
-    title: "Ejoin bus",
+    title: "Smart Charge Planning",
     description:
-      "An application used by a bus company for bus fleet management.",
+      "An application for managing a bus fleet. My main responsibility was implementing the UI/UX design and developing frontend functionality.",
     technologies: "Next.js, React, Typescript, TailwindCSS",
     image: "/ejoin-bus.png",
     liveLink: "/",
