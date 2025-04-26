@@ -18,47 +18,54 @@ import {
   faFigma,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 function Resume() {
   return (
-    <div className="pt-20 px-4 pb-12 max-w-4xl mx-auto">
+    <div className="pt-20 px-4 pb-12 max-w-4xl mx-auto gap-4">
       {/* Header */}
-      <div className="bg-gray-800 rounded-lg p-8 mb-8 shadow-gray-900 shadow-xl">
-        <div className="flex justify-between items-start mb-6">
+      <section className="flex flex-col md:flex-row items-center justify-between min-h-[400px] gap-6">
+        {/* Text box */}
+        <div className="bg-gray-800 rounded-lg p-8 shadow-gray-900 shadow-xl flex flex-col justify-between w-full md:w-2/3 h-full">
           <div>
-            <h1 className="text-3xl text-white font-bold mb-2">
+            <h1 className="text-4xl text-white font-bold mb-2">
               Samuel Rychvalský
             </h1>
-            <h2 className="text-xl text-gray-400">Junior Frontend Developer</h2>
-          </div>
-          <a
-            href="/resume.pdf"
-            download
-            className="flex items-center text-white font-normal gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md text-lg hover:opacity-90 transition-transform duration-300 transform hover:scale-110"
-          >
-            <FontAwesomeIcon icon={faDownload} />
-            <span className="hidden sm:inline">Download PDF</span>
-          </a>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300">
-          <div className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faEnvelope} className="text-sky-500" />
-            srychvalsky28@gmail.com
-          </div>
-          <div className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faPhone} className="text-sky-500" />
-            +421 918 034 555
-          </div>
-          <div className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faMapPin} className="text-sky-500" />
-            Bardejov, SK
-          </div>
-          <div className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faCalendar} className="text-sky-500" />
-            Available for opportunities
+            <h2 className="text-2xl text-gray-400 mb-6">
+              Junior Frontend Developer
+            </h2>
+            <div className="flex flex-col gap-4 text-gray-300">
+              <div className="flex items-center gap-2 border-b border-gray-700 pb-2">
+                <FontAwesomeIcon icon={faEnvelope} className="text-sky-500" />
+                <span>srychvalsky28@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-2 border-b border-gray-700 pb-2">
+                <FontAwesomeIcon icon={faPhone} className="text-sky-500" />
+                <span>+421 918 034 555</span>
+              </div>
+              <div className="flex items-center gap-2 border-b border-gray-700 pb-2">
+                <FontAwesomeIcon icon={faMapPin} className="text-sky-500" />
+                <span>Bardejov, SK</span>
+              </div>
+              <div className="flex items-center gap-2 border-b border-gray-700 pb-2">
+                <FontAwesomeIcon icon={faCalendar} className="text-sky-500" />
+                <span>Available for opportunities</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+
+        {/* Image box */}
+        <div className="flex items-center justify-center h-full  mb-6 md:mb-0">
+          <Link href="/me.png">
+            <img
+              src="/me.png"
+              alt="Samuel"
+              className="w-60 rounded-lg bg-slate-100 border-4 border-slate-300"
+            />
+          </Link>
+        </div>
+      </section>
 
       {/* Summary */}
       <section className="bg-gray-800 rounded-lg p-8 mb-8 shadow-gray-900 shadow-xl">
