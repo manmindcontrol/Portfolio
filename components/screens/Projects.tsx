@@ -38,7 +38,7 @@ const projects = [
       "CLI tool for generating new projects. My main responsibility in this project is UI/UX design",
     technologies: "Next.js, React, Typescript, TailwindCSS",
     image: "/genexy.png",
-    liveLink: "/",
+    liveLink: "https://genexy.io/en",
     githubLink: "/",
   },
   {
@@ -110,18 +110,24 @@ export default function ProjectSlider() {
             </p>
             {/* Buttons */}
             <div className="flex justify-center md:justify-start space-x-6 mt-6">
-              <Link
-                href={projects[currentIndex].liveLink}
-                className="p-4 bg-white text-black rounded-full flex items-center gap-3 text-lg"
-              >
-                <FiArrowUpRight size={24} />
-              </Link>
-              <Link
-                href={projects[currentIndex].githubLink}
-                className="p-4 bg-white text-black rounded-full flex items-center gap-3 text-lg"
-              >
-                <FaGithub size={24} />
-              </Link>
+              {projects[currentIndex].liveLink &&
+                projects[currentIndex].liveLink !== "/" && (
+                  <Link
+                    href={projects[currentIndex].liveLink}
+                    className="p-4 bg-white text-black rounded-full flex items-center gap-3 text-lg"
+                  >
+                    <FiArrowUpRight size={24} />
+                  </Link>
+                )}
+              {projects[currentIndex].githubLink &&
+                projects[currentIndex].githubLink !== "/" && (
+                  <Link
+                    href={projects[currentIndex].githubLink}
+                    className="p-4 bg-white text-black rounded-full flex items-center gap-3 text-lg"
+                  >
+                    <FaGithub size={24} />
+                  </Link>
+                )}
             </div>
           </div>
 

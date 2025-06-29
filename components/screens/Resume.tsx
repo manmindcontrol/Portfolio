@@ -7,6 +7,7 @@ import {
   faBriefcase,
   faEnvelope,
   faCode,
+  faLanguage,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faHtml5,
@@ -28,7 +29,7 @@ function Resume() {
         <div className="bg-gray-800 rounded-lg p-8 shadow-gray-900 shadow-xl flex flex-col justify-between w-full md:w-2/3 h-full">
           <div>
             <h1 className="text-4xl text-white font-bold mb-2">
-              Samuel Rychvalský
+              Ing. Samuel Rychvalský
             </h1>
             <h2 className="text-2xl text-gray-400 mb-6">
               Junior Frontend Developer
@@ -73,9 +74,9 @@ function Resume() {
           Professional Summary
         </h2>
         <p className="text-gray-300 leading-relaxed">
-          Frontend Developer at U:BIT s.r.o with 1 year of experience building
-          modern, high-performance web applications using React, TypeScript,
-          Next.js, Node.js, Tailwind CSS and other technologies. 🚀
+          Frontend Developer at U:BIT s.r.o, where I gained experience with
+          building modern, high-performance web applications using React,
+          TypeScript, Next.js, Node.js, Tailwind CSS and other technologies. 🚀
         </p>
       </section>
 
@@ -189,7 +190,7 @@ function Resume() {
       </section>
 
       {/* Education */}
-      <section className="bg-gray-800 rounded-lg p-8 shadow-gray-900 shadow-xl">
+      <section className="bg-gray-800 rounded-lg mb-8 p-8 shadow-gray-900 shadow-xl">
         <h2 className="text-2xl text-white font-bold mb-6 flex items-center gap-2">
           <FontAwesomeIcon icon={faBook} className="text-sky-500" />
           Education
@@ -208,14 +209,40 @@ function Resume() {
               Univerzita Pavla Jozefa Šafárika v Košiciach
             </h3>
             <p className="text-gray-400">2020 – 2023</p>
+            <p className="italic text-sm">
+              English Language for European Institutions and Economics -
+              Bachelor degree
+            </p>
           </div>
 
           <div>
             <h3 className="text-xl font-semibold">
-              Ekonomická univerzita v Bratislave
+              Bratislava University of Economics and Business
             </h3>
-            <p className="text-gray-400">2023 – súčasnosť</p>
-            <p className="italic text-sm">Podnikový obchod a marketing</p>
+            <p className="text-gray-400">2023 – 2025</p>
+            <p className="italic text-sm">
+              Corporate Business and Marketing - Master degree
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="bg-gray-800 rounded-lg p-8 shadow-gray-900 shadow-xl">
+        <h2 className="text-2xl text-white font-bold mb-6 flex items-center gap-2">
+          <FontAwesomeIcon icon={faLanguage} className="text-sky-500" />
+          Languages
+        </h2>
+
+        <div className="space-y-6 text-gray-300">
+          <div>
+            <h3 className="text-xl font-semibold">English Language - C1</h3>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold">Slovak Language - C2 </h3>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold">Russian Language - B1</h3>
           </div>
         </div>
       </section>
