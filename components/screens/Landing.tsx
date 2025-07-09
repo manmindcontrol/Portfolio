@@ -16,11 +16,14 @@ export default function Home() {
           className="text-center lg:text-left"
         >
           {/* Heading */}
-          <h1 className="text-4xl md:text-6xl text-white font-semibold">
-            Hello, I{"'"}m
-            <p className="text-[10vw] md:text-[7vw] font-bold uppercase tracking-wide bg-clip-text text-transparent bg-white transition-transform duration-300 transform hover:scale-110">
+          <h1 className="relative text-4xl md:text-6xl text-white font-semibold text-center lg:text-left">
+            Hello, I&apos;m
+            <span
+              id="name"
+              className="block text-[10vw] md:text-[7vw] font-bold uppercase tracking-wide transition-transform duration-300 hover:scale-110"
+            >
               Samuel Rychvalský
-            </p>
+            </span>
           </h1>
           {/* Description */}
           <p className="text-white md:block max-w-[900px] text-lg md:text-2xl mt-4 ">
@@ -35,7 +38,7 @@ export default function Home() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mt-8">
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-6 mt-8">
             <button
               onClick={() => scrollToSection("projects")}
               className="relative bg-white font-semibold px-6 py-3 text-lg text-black rounded-full max-w-[200px] shadow-xl shadow-black before:absolute before:inset-0 before:rounded-full transition-transform duration-300 transform hover:bg-white  hover:scale-110"
