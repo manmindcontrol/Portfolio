@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaGitlab } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,86 +15,108 @@ const projects = [
     id: 1,
     title: "MetaHost.sk",
     description:
-      "Game Server Rental Platform. My primary role was UI/UX design, ensuring an intuitive user experience, modern aesthetics, full responsiveness, and interactive elements for a seamless journey across all devices.",
-    technologies: "Next.js, React, Typescript, TailwindCSS",
+      "Game Server Rental Platform. This was the first project where I took full responsibility for the frontend. I led the UI/UX design, creating a modern look, intuitive navigation, full responsiveness, and interactive elements to ensure a smooth experience on all devices.",
+    technologies: "React, Next.js, Typescript, TailwindCSS",
     image: "/metahost.png",
     liveLink: "https://metahost.sk/en",
-    githubLink: "/",
+    gitlabLink: "https://gitlab.ubit.sk/metahost/web",
+    githubLink: "",
   },
   {
     id: 2,
     title: "Ejoin charging connectors",
     description:
-      "Charging connectors showcased at the EJOIN gas station. I was responsible for bringing the design to life on the frontend and developing the API to ensure smooth functionality.",
-    technologies: "Next.js, React, Typescript, TailwindCSS, API",
+      "An application developed for charging stations, showcased at the EJOIN gas station. I was responsible for the frontend, where I implemented a smooth, real-time display of the charging status. I also built the API to ensure everything runs seamlessly.",
+    technologies: "React, Next.js, Typescript, TailwindCSS, API",
     image: "/ejoin-hubmonitor.png",
     liveLink: "/",
-    githubLink: "/",
+    gitlabLink: "/https://gitlab.ubit.sk/ejoin/ejoin-hubmonitor",
+    githubLink: "",
   },
   {
     id: 3,
-    title: "Genexy",
+    title: "Genexy.io",
     description:
-      "CLI tool for generating new projects. My main responsibility in this project is UI/UX design",
-    technologies: "Next.js, React, Typescript, TailwindCSS",
+      "CLI tool for generating new projects. In this project, my primary focus was on the UI/UX design of the application, ensuring it’s intuitive, user-friendly, and visually consistent.",
+    technologies: "React, Next.js, Typescript, TailwindCSS",
     image: "/genexy.png",
     liveLink: "https://genexy.io/en",
-    githubLink: "/",
+    gitlabLink: "https://gitlab.ubit.sk/ubit/genexy/web",
+    githubLink: "",
   },
   {
     id: 4,
     title: "Bookni",
     description:
-      "Web application for booking events and personalities. Responsible for frontend development, UI/UX design, and implementation of key functionality.",
-    technologies: "Next.js, React, Typescript, TailwindCSS",
+      "Web application for booking events and personalities. I was responsible for the frontend development, crafting the UI/UX design, and implementing core features to ensure a seamless user experience.",
+    technologies: "React, Next.js, Typescript, TailwindCSS",
     image: "/bookni.png",
     liveLink: "/",
-    githubLink: "/",
+    gitlabLink: "https://gitlab.ubit.sk/bookni/frontend/bookni-web",
+    githubLink: "",
   },
   {
     id: 5,
     title: "Smart Charge Planning",
     description:
-      "An application for managing a bus fleet. My main responsibility was implementing the UI/UX design and developing frontend functionality.",
-    technologies: "Next.js, React, Typescript, TailwindCSS",
+      "An application used for managing e-buses. I was primarily responsible for the frontend development and UI/UX, but also contributed by writing parts of the API.",
+    technologies: "React, Next.js, Typescript, TailwindCSS",
     image: "/ejoin-bus.png",
     liveLink: "/",
-    githubLink: "/",
+    gitlabLink: "https://gitlab.ubit.sk/ejoin/ejoin-ebus/web",
+    githubLink: "",
   },
 ];
 
 export default function ProjectSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   const nextProject = () => {
+    setDirection(1);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
   };
 
   const prevProject = () => {
+    setDirection(-1);
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
     );
+  };
+
+  const variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir < 0 ? 300 : -300,
+      opacity: 0,
+    }),
   };
 
   return (
     <>
       <section
         id="projects"
-        className="relative overflow-hidden w-full min-h-screen flex flex-col items-center bg-gradient-to-r from-slate-900 to-sky-700 p-8 md:p-16 gap-32"
+        className="relative h-screen overflow-hidden w-full flex flex-col items-center bg-gradient-to-r from-slate-900 to-sky-700 p-8 md:p-16 gap-32"
       >
         <FallingStars />
         {/* Top Shadow Fade */}
         <div className="pointer-events-none absolute top-0 left-0 w-full h-32 z-10 bg-gradient-to-b from-black/70 to-transparent" />
-
         {/* Bottom Shadow Fade */}
         <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 z-10 bg-gradient-to-t from-black/70 to-transparent" />
 
         <h1 className="text-white font-semibold text-4xl md:text-6xl mt-8">
           Projects
         </h1>
-        {/* Ensure column layout by default, switching to row on XL screens */}
+
         <div className="flex flex-col xl:flex-row w-full max-w-7xl items-center xl:items-start justify-between gap-10">
-          {/* Left Text Section */}
+          {/* Left Text */}
           <div className="flex flex-col text-white w-full md:w-2/3 text-center md:text-left">
             <h1 className="text-5xl md:text-8xl font-semibold">
               0{projects[currentIndex].id}
@@ -108,7 +130,7 @@ export default function ProjectSlider() {
             <p className="text-cyan-500 mt-4 text-lg md:text-2xl">
               {projects[currentIndex].technologies}
             </p>
-            {/* Buttons */}
+
             <div className="flex justify-center md:justify-start space-x-6 mt-6">
               {projects[currentIndex].liveLink &&
                 projects[currentIndex].liveLink !== "/" && (
@@ -128,18 +150,41 @@ export default function ProjectSlider() {
                     <FaGithub size={24} />
                   </Link>
                 )}
+              {projects[currentIndex].gitlabLink &&
+                projects[currentIndex].gitlabLink !== "/" && (
+                  <Link
+                    href={projects[currentIndex].gitlabLink}
+                    className="p-4 bg-white text-black rounded-full flex items-center gap-3 text-lg"
+                  >
+                    <FaGitlab size={24} />
+                  </Link>
+                )}
             </div>
           </div>
 
-          {/* Right Image Section (starts below, moves to right on XL screens) */}
+          {/* Right Image */}
           <div className="w-full md:w-2/3 flex flex-col items-end">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={projects[currentIndex].id}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={(event, info) => {
+                  if (info.offset.x < -100) {
+                    nextProject();
+                  } else if (info.offset.x > 100) {
+                    prevProject();
+                  }
+                }}
                 className="relative"
               >
                 <Image
@@ -152,7 +197,20 @@ export default function ProjectSlider() {
               </motion.div>
             </AnimatePresence>
 
-            <div className="flex gap-4 mt-6 pr-4">
+            {/* Dots on mobile */}
+            <div className="flex md:hidden justify-center gap-2 mt-6 w-full">
+              {projects.map((_, index) => (
+                <div
+                  key={index}
+                  className={`w-3 h-3 rounded-full ${
+                    index === currentIndex ? "bg-white" : "bg-white/30"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Arrows on desktop */}
+            <div className="hidden md:flex gap-4 mt-6 pr-4">
               <button
                 onClick={prevProject}
                 className="text-white text-4xl p-3 rounded-xl"
@@ -161,7 +219,7 @@ export default function ProjectSlider() {
               </button>
               <button
                 onClick={nextProject}
-                className="text-white text-4xl  p-3 rounded-xl"
+                className="text-white text-4xl p-3 rounded-xl"
               >
                 <FontAwesomeIcon icon={faArrowRight} />
               </button>
@@ -172,41 +230,3 @@ export default function ProjectSlider() {
     </>
   );
 }
-
-/* Right Image Section
-        <div className="w-full md:w-1/2 flex flex-col items-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={projects[currentIndex].id}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="relative"
-            >
-              <Image
-                src={projects[currentIndex].image}
-                alt={projects[currentIndex].title}
-                width={700}
-                height={400}
-                className="rounded-lg shadow-xl outline outline-white shadow-black"
-              />
-            </motion.div>
-          </AnimatePresence>
-   
-          <div className="flex gap-4 mt-6">
-            <button
-              onClick={prevProject}
-              className="text-white text-xl shadow-lg shadow-zinc-900 bg-gradient-to-r from-cyan-500 to-blue-500 p-3 rounded-lg"
-            >
-              <FontAwesomeIcon icon={faArrowLeft} />
-            </button>
-            <button
-              onClick={nextProject}
-              className="text-white text-xl shadow-lg shadow-zinc-900 bg-gradient-to-r from-blue-500 to-cyan-500 p-3 rounded-lg"
-            >
-              <FontAwesomeIcon icon={faArrowRight} />
-            </button>
-          </div>
-        </div>
-      </div> */

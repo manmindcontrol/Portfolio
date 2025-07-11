@@ -8,6 +8,7 @@ import {
   faLinkedin,
   faInstagram,
   faGithub,
+  faGitlab,
 } from "@fortawesome/free-brands-svg-icons";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -48,6 +49,15 @@ const Navbar = () => {
           />
         </Link>
         <Link
+          href="https://gitlab.ubit.sk/samuel.rychvalsky"
+          className="hover:text-cyan-500 transition duration-200"
+        >
+          <FontAwesomeIcon
+            icon={faGitlab}
+            className="text-white transition-transform duration-300 transform hover:scale-125"
+          />
+        </Link>
+        <Link
           href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
           className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125 "
         >
@@ -83,6 +93,13 @@ const Navbar = () => {
             className="text-lg text-black hover:text-cyan-500 transition"
           >
             <FontAwesomeIcon icon={faGithub} className="mr-2" />
+            GitHub
+          </Link>
+          <Link
+            href="https://gitlab.ubit.sk/samuel.rychvalsky"
+            className="text-lg text-black hover:text-cyan-500 transition"
+          >
+            <FontAwesomeIcon icon={faGitlab} className="mr-2" />
             GitHub
           </Link>
           <Link

@@ -52,4 +52,11 @@
 #name {
   animation: lights 5s 750ms linear infinite;
   margin: auto;
+  transition: transform 0.3s;
 }
+
+#name:hover {
+  transform: scale(1.10);
+}
+
+
