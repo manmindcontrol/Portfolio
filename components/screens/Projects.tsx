@@ -103,7 +103,7 @@ export default function ProjectSlider() {
     <>
       <section
         id="projects"
-        className="relative h-screen overflow-hidden w-full flex flex-col items-center bg-gradient-to-r from-slate-900 to-sky-700 p-8 md:p-16 gap-32"
+        className="relative overflow-hidden w-full min-h-screen flex flex-col items-center bg-gradient-to-r from-slate-900 to-sky-700 p-8 md:p-16 gap-32"
       >
         <FallingStars />
         {/* Top Shadow Fade */}
