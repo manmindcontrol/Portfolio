@@ -59,16 +59,4 @@
   transform: scale(1.10);
 }
 
-body {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-@media (min-width: 640px) {
-  body {
-    background-size: cover;
-  }
-}
 
