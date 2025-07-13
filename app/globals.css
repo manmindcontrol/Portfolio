@@ -60,11 +60,10 @@
 }
 
 body {
-  background-image: url('/abstract.png');
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-size: contain;
 }
 
 @media (min-width: 640px) {
@@ -72,5 +71,4 @@ body {
     background-size: cover;
   }
 }
-
 
