@@ -20,7 +20,7 @@ export default function Home() {
             Hello, I&apos;m
             <span
               id="name"
-              className="block text-[12vw] md:text-[7vw] font-bold uppercase tracking-wide"
+              className="block text-5xl md:text-[7vw] font-bold uppercase tracking-wide"
             >
               Samuel Rychvalský
             </span>
