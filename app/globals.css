@@ -59,4 +59,12 @@
   transform: scale(1.10);
 }
 
+body {
+  background-color: #050b1e;
+  background-image: url('/abstract.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
