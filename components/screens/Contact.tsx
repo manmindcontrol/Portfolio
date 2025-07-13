@@ -45,7 +45,9 @@ export default function ContactForm() {
     <>
       <section
         id="contact"
-        className="relative overflow-hidden w-full h-screen flex flex-col items-center justify-center  p-8 pt-8"
+        className="w-screen min-h-screen relative bg-cover bg-no-repeat bg-fixed bg-center overflow-x-hidden antialiased flex flex-col items-center justify-center  p-8 pt-8
+        "
+        style={{ backgroundImage: "url('/abstract.png')" }}
       >
         <h2 className="text-4xl md:text-6xl text-white font-semibold mb-10">
           Contact me

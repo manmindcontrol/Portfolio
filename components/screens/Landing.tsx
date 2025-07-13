@@ -7,7 +7,11 @@ export default function Home() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <main className="w-screen min-h-screen  overflow-hidden" id="landing">
+    <main
+      id="landing"
+      className="w-screen min-h-screen relative bg-cover bg-no-repeat bg-fixed bg-center overflow-x-hidden antialiased"
+      style={{ backgroundImage: "url('/abstract.png')" }}
+    >
       <div className="flex flex-col items-center justify-center text-center px-6 py-10 md:px-40 min-h-screen">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
