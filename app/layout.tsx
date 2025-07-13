@@ -26,11 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`relative bg-no-repeat bg-center bg-fixed overflow-x-hidden antialiased ${geistSans.variable} ${geistMono.variable}`}
-        style={{
-          backgroundImage: "url('/abstract.png')",
-          backgroundSize: "cover",
-        }}
+        className={`relative overflow-x-hidden antialiased ${geistSans.variable} ${geistMono.variable}`}
       >
         <Navbar />
         {children}
