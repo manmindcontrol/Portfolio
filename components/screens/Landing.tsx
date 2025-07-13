@@ -8,7 +8,7 @@ export default function Home() {
   };
   return (
     <main className="w-screen min-h-screen  overflow-hidden" id="landing">
-      <div className="flex flex-col items-center text-center md:text-left md:items-start px-6 py-10 md:px-40 mt-40 md:mt-60">
+      <div className="flex flex-col items-center justify-center text-center px-6 py-10 md:px-40 min-h-screen">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ export default function Home() {
             Hello, I&apos;m
             <span
               id="name"
-              className="block text-[10vw] md:text-[7vw] font-bold uppercase tracking-wide"
+              className="block text-[12vw] md:text-[7vw] font-bold uppercase tracking-wide"
             >
               Samuel Rychvalský
             </span>
@@ -38,16 +38,16 @@ export default function Home() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-6 mt-8">
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-center lg:justify-start space-y-4 md:space-y-0 md:space-x-6 mt-8">
             <button
               onClick={() => scrollToSection("projects")}
-              className="relative bg-white font-semibold px-6 py-3 text-lg text-black rounded-full max-w-[200px] shadow-xl shadow-black before:absolute before:inset-0 before:rounded-full transition-transform duration-300 transform hover:bg-white  hover:scale-110"
+              className="relative bg-white font-semibold px-4 py-2 md:px-6 md:py-3 text-base md:text-lg text-black rounded-full max-w-[160px] md:max-w-[200px] shadow-xl shadow-black before:absolute before:inset-0 before:rounded-full transition-transform duration-300 transform hover:bg-white hover:scale-110"
             >
               My Projects
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="relative bg-white font-semibold px-6 py-3 text-lg text-black rounded-full max-w-[200px] shadow-xl shadow-black before:absolute before:inset-0 before:rounded-full transition-transform duration-300 transform hover:bg-white hover:scale-110"
+              className="relative bg-white font-semibold px-4 py-2 md:px-6 md:py-3 text-base md:text-lg text-black rounded-full max-w-[160px] md:max-w-[200px] shadow-xl shadow-black before:absolute before:inset-0 before:rounded-full transition-transform duration-300 transform hover:bg-white hover:scale-110"
             >
               Contact Me
             </button>

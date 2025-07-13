@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-// Typ pre hviezdy
 interface Star {
   id: number;
   left: string;
@@ -13,15 +12,14 @@ interface Star {
   opacity: number;
 }
 
-// Generovanie hviezd s plynulejšími animáciami
 const generateStars = (count: number): Star[] => {
   return Array.from({ length: count }, (_, index) => ({
     id: index,
-    left: `${Math.random() * 100}vw`, // Náhodná pozícia na X osi
-    size: `${Math.random() * 3 + 2}px`, // Veľkosť medzi 2px - 5px
-    delay: Math.random() * 5, // Rôzne oneskorenia animácie
-    duration: Math.random() * 7 + 5, // Dlhšie trvanie (5s - 12s)
-    opacity: Math.random() * 0.5 + 0.5, // Náhodná priehľadnosť (0.5 - 1)
+    left: `${Math.random() * 100}vw`,
+    size: `${Math.random() * 3 + 2}px`,
+    delay: Math.random() * 5,
+    duration: Math.random() * 7 + 5,
+    opacity: Math.random() * 0.5 + 0.5,
   }));
 };
 
@@ -29,17 +27,16 @@ export default function FallingStars() {
   const [stars, setStars] = useState<Star[]>([]);
 
   useEffect(() => {
-    setStars(generateStars(30)); // Viac hviezd pre plynulejší efekt
-
+    setStars(generateStars(30));
     const interval = setInterval(() => {
-      setStars(generateStars(30)); // Obnovujeme každých 7 sekúnd
+      setStars(generateStars(30));
     }, 7000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-10">
       {stars.map((star) => (
         <motion.div
           key={star.id}
@@ -55,7 +52,7 @@ export default function FallingStars() {
           transition={{
             duration: star.duration,
             delay: star.delay,
-            ease: "easeInOut", // Plynulejší pohyb
+            ease: "easeInOut",
             repeat: Infinity,
           }}
         />

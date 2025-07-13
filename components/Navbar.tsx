@@ -100,7 +100,7 @@ const Navbar = () => {
             className="text-lg text-black hover:text-cyan-500 transition"
           >
             <FontAwesomeIcon icon={faGitlab} className="mr-2" />
-            GitHub
+            Gitlab
           </Link>
           <Link
             href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
