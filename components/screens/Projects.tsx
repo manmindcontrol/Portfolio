@@ -1,14 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaGitlab } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import FallingStars from "../FallingStars";
 
 const projects = [
   {
