@@ -10,7 +10,6 @@ export default function Home() {
     <main
       id="landing"
       className="w-screen min-h-screen relative bg-cover bg-no-repeat bg-fixed bg-center overflow-x-hidden antialiased"
-      style={{ backgroundImage: "url('/abstract.png')" }}
     >
       <div className="flex flex-col items-center justify-center text-center px-6 py-10 md:px-40 min-h-screen">
         <motion.div

@@ -58,13 +58,25 @@
 #name:hover {
   transform: scale(1.10);
 }
-
 body {
   background-color: #050b1e;
-  background-image: url('/abstract.png');
+  background-image: url('/abstract.png'); /* desktop default */
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-image: url('/background_phone.jpg'); /* phone */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  body {
+    background-image: url('/background_tablet.jpg'); /* tablet */
+  }
+}
+
 
