@@ -8,6 +8,7 @@ import {
   faEnvelope,
   faCode,
   faLanguage,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faHtml5,
@@ -24,6 +25,16 @@ function Resume() {
   return (
     <div className="pt-20 px-4 pb-12 max-w-4xl mx-auto gap-4">
       {/* Header */}
+      <div className="text-lg sm:text-xl font-semibold ">
+        <Link
+          href="/"
+          className="block w-fit text-white text-base sm:text-lg md:text-xl font-normal 
+               transition-transform duration-300 transform hover:scale-110  mb-4"
+        >
+          <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
+          Back to Landing Page
+        </Link>
+      </div>
       <section className="flex flex-col md:flex-row items-center justify-between min-h-[400px] gap-6">
         {/* Text box */}
         <div className="bg-gray-800 rounded-lg p-8 shadow-gray-900 shadow-xl flex flex-col justify-between w-full md:w-2/3 h-full">

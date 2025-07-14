@@ -42,6 +42,8 @@ const Navbar = () => {
         <Link
           href="https://www.github.com/manmindcontrol"
           className="hover:text-cyan-500 transition duration-200"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <FontAwesomeIcon
             icon={faGithub}
@@ -51,6 +53,8 @@ const Navbar = () => {
         <Link
           href="https://gitlab.ubit.sk/samuel.rychvalsky"
           className="hover:text-cyan-500 transition duration-200"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <FontAwesomeIcon
             icon={faGitlab}
@@ -60,12 +64,16 @@ const Navbar = () => {
         <Link
           href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
           className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125 "
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faLinkedin} className="text-white" />
         </Link>
         <Link
           href="https://www.instagram.com/samuel_rychvalsky/"
           className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faInstagram} className="text-white" />
         </Link>
@@ -91,6 +99,8 @@ const Navbar = () => {
           <Link
             href="https://www.github.com/manmindcontrol"
             className="text-lg text-black hover:text-cyan-500 transition"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faGithub} className="mr-2" />
             GitHub
@@ -98,6 +108,8 @@ const Navbar = () => {
           <Link
             href="https://gitlab.ubit.sk/samuel.rychvalsky"
             className="text-lg text-black hover:text-cyan-500 transition"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faGitlab} className="mr-2" />
             Gitlab
@@ -105,6 +117,8 @@ const Navbar = () => {
           <Link
             href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
             className="text-lg text-black hover:text-cyan-500 transition"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
             LinkedIn
@@ -112,6 +126,8 @@ const Navbar = () => {
           <Link
             href="https://www.instagram.com/samuel_rychvalsky/"
             className="text-lg text-black hover:text-cyan-500 transition"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FontAwesomeIcon icon={faInstagram} className="mr-2" />
             Instagram
