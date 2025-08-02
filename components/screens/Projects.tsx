@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaGitlab } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const projects = [

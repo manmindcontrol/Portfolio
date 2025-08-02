@@ -8,7 +8,6 @@ import {
   faLinkedin,
   faInstagram,
   faGithub,
-  faGitlab,
 } from "@fortawesome/free-brands-svg-icons";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
