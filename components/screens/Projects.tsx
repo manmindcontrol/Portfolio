@@ -61,6 +61,28 @@ const projects = [
     gitlabLink: "https://gitlab.ubit.sk/ejoin/ejoin-ebus/web",
     githubLink: "",
   },
+  {
+    id: 6,
+    title: "Webique",
+    description:
+      "Website for a agency that creates websites for restaurants, small businesses or personal prtfolios. Featuring a portfolio, services and a contact form.",
+    technologies: "React, Next.js, Typescript, TailwindCSS, EmailJS",
+    image: "/webique.png",
+    liveLink: "https://webique-olive.vercel.app",
+    gitlabLink: "",
+    githubLink: "https://github.com/manmindcontrol/webique",
+  },
+  {
+    id: 7,
+    title: "AOLL",
+    description:
+      "Multi-page website for selling an e-book with sections about the book, reviews, and a simple purchasing process.",
+    technologies: "React, Next.js, Typescript, TailwindCSS, Stripe",
+    image: "/AOLL.png",
+    liveLink: "/",
+    gitlabLink: "",
+    githubLink: "https://github.com/manmindcontrol/aoll",
+  },
 ];
 
 export default function ProjectList() {
@@ -115,14 +137,6 @@ export default function ProjectList() {
                     className="p-4 bg-white text-black rounded-full flex items-center gap-3 text-lg"
                   >
                     <FaGithub size={24} />
-                  </Link>
-                )}
-                {project.gitlabLink && project.gitlabLink !== "/" && (
-                  <Link
-                    href={project.gitlabLink}
-                    className="p-4 bg-white text-black rounded-full flex items-center gap-3 text-lg"
-                  >
-                    <FaGitlab size={24} />
                   </Link>
                 )}
               </div>
