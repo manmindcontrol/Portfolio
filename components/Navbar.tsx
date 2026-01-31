@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,18 +16,6 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 h-[80px] z-50  text-white flex items-center px-6 md:px-16 text-4xl font-bold backdrop-blur-sm ">
       {/* Logo */}
-      <Link href="/" className="flex items-center gap-1 w-full md:w-fit">
-        <Image
-          src="/thunder.png"
-          alt="Genexy Logo"
-          width={50}
-          height={50}
-          className="transition-all cursor-pointer rounded-xl p-2 hover:animate-spin duration-300 "
-        />
-        <h1 className="whitespace-nowrap md:inline font-bold text-white transition-transform duration-300 transform hover:scale-110">
-          Samuel<span className="text-cyan-500">.</span>
-        </h1>
-      </Link>
 
       {/* Desktop Social Links */}
       <div className="ml-auto hidden md:flex items-center gap-5 text-3xl">

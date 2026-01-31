@@ -8,6 +8,17 @@ import { FiArrowUpRight } from "react-icons/fi";
 const projects = [
   {
     id: 1,
+    title: "studystarter.io",
+    description:
+      "AI-Powered Learning Platform with intelligent study materials generation from PDFs and lectures. Features include automated note-taking, quiz generation using GPT-4o, audio transcription with Whisper API, interactive AI chatbot, and tiered subscription system with Stripe. Built with secure authentication, RLS policies, and comprehensive usage tracking.",
+    technologies: "Next.js, TypeScript, TailwindCSS, Supabase, OpenAI, Stripe",
+    image: "/studystarter.png",
+    liveLink: "",
+    gitlabLink: "",
+    githubLink: "",
+  },
+  {
+    id: 2,
     title: "MetaHost.sk",
     description:
       "Game Server Rental Platform. This was the first project where I took full responsibility for the frontend. I led the UI/UX design, creating a modern look, intuitive navigation, full responsiveness, and interactive elements to ensure a smooth experience on all devices.",
@@ -18,7 +29,7 @@ const projects = [
     githubLink: "",
   },
   {
-    id: 2,
+    id: 3,
     title: "Ejoin charging connectors",
     description:
       "An application developed for charging stations, showcased at the EJOIN gas station. I was responsible for the frontend, where I implemented a smooth, real-time display of the charging status. I also built the API to ensure everything runs seamlessly.",
@@ -29,7 +40,7 @@ const projects = [
     githubLink: "",
   },
   {
-    id: 3,
+    id: 4,
     title: "Genexy.io",
     description:
       "CLI tool for generating new projects. In this project, my primary focus was on the UI/UX design of the application, ensuring it’s intuitive, user-friendly, and visually consistent.",
@@ -40,7 +51,7 @@ const projects = [
     githubLink: "",
   },
   {
-    id: 4,
+    id: 5,
     title: "Bookni",
     description:
       "Web application for booking events and personalities. I was responsible for the frontend development, crafting the UI/UX design, and implementing core features to ensure a seamless user experience.",
@@ -51,7 +62,7 @@ const projects = [
     githubLink: "",
   },
   {
-    id: 5,
+    id: 6,
     title: "Smart Charge Planning",
     description:
       "An application used for managing e-buses. I was primarily responsible for the frontend development and UI/UX, but also contributed by writing parts of the API.",
@@ -62,7 +73,7 @@ const projects = [
     githubLink: "",
   },
   {
-    id: 6,
+    id: 7,
     title: "Webique",
     description:
       "Website for a agency that creates websites for restaurants, small businesses or personal prtfolios. Featuring a portfolio, services and a contact form.",
@@ -73,7 +84,7 @@ const projects = [
     githubLink: "https://github.com/manmindcontrol/webique",
   },
   {
-    id: 7,
+    id: 8,
     title: "AOLL",
     description:
       "Multi-page website for selling an e-book with sections about the book, reviews, and a simple purchasing process.",
