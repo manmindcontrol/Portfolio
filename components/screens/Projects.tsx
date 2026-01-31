@@ -11,7 +11,7 @@ const projects = [
     title: "MetaHost.sk",
     description:
       "Game Server Rental Platform. This was the first project where I took full responsibility for the frontend. I led the UI/UX design, creating a modern look, intuitive navigation, full responsiveness, and interactive elements to ensure a smooth experience on all devices.",
-    technologies: "React, Next.js, Typescript, TailwindCSS",
+    technologies: "React, Next.js, Typescript, TailwindCSS, Node.js",
     image: "/metahost.png",
     liveLink: "https://metahost.sk/en",
     gitlabLink: "https://gitlab.ubit.sk/metahost/web",
