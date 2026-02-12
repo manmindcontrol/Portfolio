@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,96 +14,130 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 h-[80px] z-50  text-white flex items-center px-6 md:px-16 text-4xl font-bold backdrop-blur-sm ">
-      {/* Logo */}
-
-      {/* Desktop Social Links */}
-      <div className="ml-auto hidden md:flex items-center gap-5 text-3xl">
-        <Link
-          href="/resume"
-          className="hover:text-cyan-500 font-normal transition-transform duration-300 transform hover:scale-125"
-        >
-          CV
-        </Link>
-        <Link
-          href="https://www.github.com/manmindcontrol"
-          className="hover:text-cyan-500 transition duration-200"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon
-            icon={faGithub}
-            className="text-white transition-transform duration-300 transform hover:scale-125"
-          />
+    <>
+      <nav className="fixed top-0 left-0 right-0 h-[80px] z-50 glass-morphism text-white flex items-center px-6 md:px-16 text-4xl font-bold backdrop-blur-sm">
+        {/* Logo */}
+        <Link href="/" className="text-white">
+          <img src="/slogo.png" alt="Logo" className="h-20 w-20" />
         </Link>
 
-        <Link
-          href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
-          className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125 "
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faLinkedin} className="text-white" />
-        </Link>
-        <Link
-          href="https://www.instagram.com/samuel_rychvalsky/"
-          className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faInstagram} className="text-white" />
-        </Link>
-      </div>
-
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden text-white text-3xl ml-auto"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
-      </button>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="absolute top-[80px] right-5 w-2/4 flex flex-col items-center py-4 space-y-4 md:hidden bg-slate-200 outline-2 outline-black  opacity-90 rounded-lg shadow-xl backdrop-filter backdrop-blur-md">
+        {/* Desktop Social Links */}
+        <div className="ml-auto hidden md:flex items-center gap-5 text-3xl">
           <Link
             href="/resume"
-            className="text-lg text-black  hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
+            className="hover:text-cyan-500 font-normal transition-transform duration-300 transform hover:scale-125"
           >
             CV
           </Link>
           <Link
             href="https://www.github.com/manmindcontrol"
-            className="text-lg text-black hover:text-cyan-500 transition"
+            className="hover:text-cyan-500 transition duration-200"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faGithub} className="mr-2" />
-            GitHub
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="text-white transition-transform duration-300 transform hover:scale-125"
+            />
           </Link>
 
           <Link
             href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
-            className="text-lg text-black hover:text-cyan-500 transition"
+            className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
-            LinkedIn
+            <FontAwesomeIcon icon={faLinkedin} className="text-white" />
           </Link>
           <Link
             href="https://www.instagram.com/samuel_rychvalsky/"
-            className="text-lg text-black hover:text-cyan-500 transition"
+            className="hover:text-cyan-500 transition-transform duration-300 transform hover:scale-125"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faInstagram} className="mr-2" />
-            Instagram
+            <FontAwesomeIcon icon={faInstagram} className="text-white" />
           </Link>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white text-3xl ml-auto"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+        </button>
+      </nav>
+
+      {/* Mobile Menu — outside nav so backdrop-filter works */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "100vh", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed top-[80px] left-0 w-full z-40 md:hidden overflow-hidden border-t border-white/10 shadow-xl backdrop-blur-xl bg-white/5"
+          >
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
+              className="flex flex-col items-start px-10 py-6 space-y-4 text-3xl"
+            >
+              <Link
+                href="/resume"
+                className="text-white font-medium hover:text-blue-400 transition duration-300"
+                onClick={() => setMenuOpen(false)}
+              >
+                CV
+              </Link>
+              <hr className="w-full border-gray-600/50" />
+              <Link
+                href="https://www.github.com/manmindcontrol"
+                className="text-white font-medium hover:text-blue-400 transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+              >
+                <FontAwesomeIcon icon={faGithub} className="mr-2" />
+                GitHub
+              </Link>
+              <hr className="w-full border-gray-600/50" />
+              <Link
+                href="https://www.linkedin.com/in/samuel-rychvalsk%C3%BD-b21a73228/"
+                className="text-white font-medium hover:text-blue-400 transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="mr-2" />
+                LinkedIn
+              </Link>
+              <hr className="w-full border-gray-600/50" />
+              <Link
+                href="https://www.instagram.com/samuel_rychvalsky/"
+                className="text-white font-medium hover:text-blue-400 transition duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+              >
+                <FontAwesomeIcon icon={faInstagram} className="mr-2" />
+                Instagram
+              </Link>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

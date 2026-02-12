@@ -29,7 +29,7 @@ function Resume() {
         <Link
           href="/"
           className="block w-fit text-white text-base sm:text-lg md:text-xl font-normal 
-               transition-transform duration-300 transform hover:scale-110  mb-4"
+               transition-transform duration-300 transform hover:scale-110 mt-5"
         >
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
           Back to Landing Page
@@ -68,13 +68,11 @@ function Resume() {
 
         {/* Image box */}
         <div className="flex items-center justify-center h-full  mb-6 md:mb-0">
-          <Link href="/me.png">
-            <img
-              src="/me.png"
-              alt="Samuel"
-              className="w-60 rounded-lg bg-slate-100 border-4 border-slate-300"
-            />
-          </Link>
+          <img
+            src="/ja.jpg"
+            alt="Samuel"
+            className="w-60 rounded-lg bg-slate-100 border-4 border-slate-300"
+          />
         </div>
       </section>
 
@@ -91,7 +89,66 @@ function Resume() {
         </p>
       </section>
 
-      {/* Experience */}
+      {/* Internship */}
+      <section className="bg-gray-800 rounded-lg p-8 mb-8 shadow-gray-900 shadow-xl">
+        <h2 className="text-2xl text-white font-bold mb-6 flex items-center gap-2">
+          <FontAwesomeIcon icon={faBriefcase} className="text-sky-500" />
+          Internship
+        </h2>
+
+        <div className="space-y-8">
+          <div>
+            <p className="text-gray-400 mb-1">2022</p>
+            <h3 className="text-xl text-gray-200 font-semibold mb-2">
+              CABO s.r.o
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              During my studies at UPJŠ, I completed an internship at CABO
+              s.r.o., where I was engaged in translating texts from English into
+              Slovak and creating dubbing for voice actors.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-gray-400 mb-1">2022</p>
+            <h3 className="text-xl text-gray-200 font-semibold mb-2">
+              Carpathian Foundation
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              During my studies at UPJŠ, as part of my school practice, I also
+              collaborated with the Carpathian Foundation on the &quot;Ufor
+              Women&quot; project, where I was responsible for translating texts
+              from Slovak into English.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-gray-400 mb-1">2024 - 2025</p>
+            <h3 className="text-xl text-gray-200 font-semibold mb-2">
+              U:BIT s.r.o
+            </h3>
+            <ul className="list-disc list-inside text-gray-300 space-y-2">
+              <li>Internship as a Junior Frontend Developer.</li>
+              <li>
+                I contributed to the development of frontend for web
+                applications and websites.
+              </li>
+              <li>I created and collaborated on UI/UX design using Figma.</li>
+              <li>
+                I gained experience with API development and teamwork in an
+                agile environment.
+              </li>
+              <li>
+                <strong>Projects:</strong> I participated in the creation of the
+                websites MetaHost.sk and Genexy.io, as well as in the
+                development of two applications for Ejoin s.r.o.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Work Experience */}
       <section className="bg-gray-800 rounded-lg p-8 mb-8 shadow-gray-900 shadow-xl">
         <h2 className="text-2xl text-white font-bold mb-6 flex items-center gap-2">
           <FontAwesomeIcon icon={faBriefcase} className="text-sky-500" />
@@ -100,65 +157,21 @@ function Resume() {
 
         <div className="space-y-8">
           <div>
-            <h3 className="text-xl text-gray-200 font-semibold mb-1">
-              Junior Fronend Developer
+            <p className="text-gray-400 mb-1">2019 - 2020</p>
+            <h3 className="text-xl text-gray-200 font-semibold mb-2">
+              FAJN CENTRUM, s.r.o
             </h3>
-            <p className="text-gray-400 mb-2">
-              U:BIT s.r.o • 06.2024 - Present
-            </p>
             <ul className="list-disc list-inside text-gray-300 space-y-2">
+              <li>Administrative Assistant.</li>
               <li>
-                Collaborated on the design and development of responsive web
-                applications
+                I contributed to processing documentation and supporting the
+                daily operations of the office.
               </li>
               <li>
-                Focused on UX/UI improvements to enhance usability and visual
-                appeal
-              </li>
-              <li>
-                Implemented interactive frontend components using React and
-                Tailwind CSS
-              </li>
-              <li>
-                Worked closely with backend developers to integrate APIs and
-                ensure data consistency
-              </li>
-              <li>
-                Participated in code reviews and contributed to agile
-                development processes
+                I carried out basic administrative tasks, including document
+                management, data entry, and preparation of materials.
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold mb-1 text-gray-200">
-              Intership as translator
-            </h3>
-            <p className="text-gray-300 mb-2">CABO s.r.o • 02. 2022- 05.2022</p>
-            <ul className="list-disc list-inside text-gray-300 space-y-2">
-              <li>
-                Translation of text and creation of dubbing intended for voice
-                actors from English to Slovak.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-1 text-gray-200">
-              Intership as translator
-            </h3>
-            <p className="text-gray-300 mb-2">Karpatská nadácia • 2022</p>
-            <ul className="list-disc list-inside text-gray-300 space-y-2">
-              <li>
-                Translation of the text Ufor Women from Slovak to English.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-1 text-gray-400">
-              Administration
-            </h3>
-            <p className="text-gray-300 mb-2">FAJN CENTRUM s.r.o • 2019-2020</p>
-            <ul className="list-disc list-inside text-gray-300 space-y-2"></ul>
           </div>
         </div>
       </section>
@@ -237,25 +250,17 @@ function Resume() {
           </div>
         </div>
       </section>
-      <section className="bg-gray-800 rounded-lg p-8 shadow-gray-900 shadow-xl">
+      <section className="bg-gray-800 rounded-lg p-8 mb-8 shadow-gray-900 shadow-xl">
         <h2 className="text-2xl text-white font-bold mb-6 flex items-center gap-2">
           <FontAwesomeIcon icon={faLanguage} className="text-sky-500" />
           Languages
         </h2>
 
-        <div className="space-y-6 text-gray-300">
-          <div>
-            <h3 className="text-xl font-semibold">English Language - C1</h3>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold">Slovak Language - C2 </h3>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold">Russian Language - B1</h3>
-          </div>
-        </div>
+        <ul className="list-disc list-inside text-gray-300 space-y-2">
+          <li>Slovak - Native</li>
+          <li>English - C1</li>
+          <li>Russian - B1</li>
+        </ul>
       </section>
     </div>
   );
