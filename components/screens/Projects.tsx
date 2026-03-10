@@ -13,7 +13,7 @@ const projects = [
       "AI-Powered Learning Platform with intelligent study materials generation from PDFs and lectures. Features include automated note-taking, quiz generation using GPT-4o, audio transcription with Whisper API, interactive AI chatbot, and tiered subscription system with Stripe. Built with secure authentication, RLS policies, and comprehensive usage tracking.",
     technologies: "Next.js, TypeScript, TailwindCSS, Supabase, OpenAI, Stripe",
     image: "/studystarter.png",
-    liveLink: "",
+    liveLink: "https://study-starter-l8nsq.ondigitalocean.app/",
     gitlabLink: "",
     githubLink: "",
   },
