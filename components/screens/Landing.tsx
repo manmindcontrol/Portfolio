@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import FallingParticles from "@/components/FallingParticles";
 
 const techStack = [
   "React",
@@ -35,8 +37,34 @@ export default function Landing() {
   return (
     <main
       id="landing"
-      className="relative w-screen min-h-screen flex flex-col overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col overflow-hidden"
     >
+      {/* Falling particles — behind everything */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ zIndex: 0 }}
+      >
+        <FallingParticles />
+      </div>
+
+      {/* Astronaut */}
+      <div className="hidden md:flex absolute right-8 lg:right-16 xl:right-24 top-1/2 -translate-y-1/2 pointer-events-none z-0 opacity-85">
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Image
+            src="/blue-astronaut.png"
+            alt="Floating astronaut"
+            width={1000}
+            height={1000}
+            className="astronaut select-none"
+            priority
+          />
+        </motion.div>
+      </div>
+
       {/* Glow blobs behind text */}
       <div className="pointer-events-none absolute inset-0">
         {/* Large cyan glow centred on the name */}
@@ -68,16 +96,16 @@ export default function Landing() {
       </div>
 
       {/* Main hero content */}
-      <div className="flex-1 flex flex-col justify-end px-6 md:px-12 lg:px-20 pb-12 pt-28">
+      <div className="flex-1 flex flex-col justify-end px-4 sm:px-6 md:px-12 lg:px-20 pb-10 pt-24">
         {/* Status chip */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex items-center gap-2.5 mb-10"
+          className="flex items-center gap-2.5 mb-8"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-          <span className="section-label">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0" />
+          <span className="section-label leading-snug">
             Frontend Developer · Available for work
           </span>
         </motion.div>
@@ -89,7 +117,7 @@ export default function Landing() {
             animate={{ y: 0 }}
             transition={{ duration: 1, ease }}
             className="font-syne font-black uppercase tracking-tight text-fg leading-none"
-            style={{ fontSize: "clamp(2.5rem, 8.5vw, 9rem)" }}
+            style={{ fontSize: "clamp(1rem, 7.5vw, 9rem)" }}
           >
             Samuel
           </motion.h1>
@@ -101,7 +129,7 @@ export default function Landing() {
             transition={{ duration: 1, delay: 0.08, ease }}
             className="font-syne font-black uppercase tracking-tight leading-none pt-2"
             style={{
-              fontSize: "clamp(2.5rem, 8.5vw, 9rem)",
+              fontSize: "clamp(1.9rem, 7vw, 9rem)",
               WebkitTextStroke: "1px rgba(6,182,212,0.35)",
               color: "transparent",
             }}
@@ -115,24 +143,23 @@ export default function Landing() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-8 mt-10"
+          className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mt-8"
         >
-          <p className="text-muted text-base md:text-lg max-w-xs leading-relaxed">
-            Building modern, high-performance web apps at{" "}
-            <span className="text-fg">U:Bit s.r.o</span> using React, TypeScript
-            & Next.js.
+          <p className="text-muted text-sm md:text-base max-w-xs leading-relaxed">
+            Building modern, high-performance web apps using React, TypeScript &
+            Next.js.
           </p>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
               onClick={() => scrollTo("projects")}
-              className="outline-btn px-5 py-2.5 text-sm font-medium"
+              className="outline-btn px-5 py-2.5 text-sm font-medium flex-1 sm:flex-none"
             >
               View Work →
             </button>
             <button
               onClick={() => scrollTo("contact")}
-              className="accent-btn px-5 py-2.5 text-sm"
+              className="accent-btn px-5 py-2.5 text-sm flex-1 sm:flex-none"
             >
               Contact Me
             </button>

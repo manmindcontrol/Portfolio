@@ -136,6 +136,20 @@
   50%       { opacity: 0.6; transform: scale(1.08); }
 }
 
+/* ─── Astronaut Float ───────────────────────────────────────── */
+@keyframes astronaut-float {
+  0%   { transform: translateY(0px)   rotate(-4deg); }
+  30%  { transform: translateY(-18px) rotate(2deg); }
+  60%  { transform: translateY(-8px)  rotate(-2deg); }
+  100% { transform: translateY(0px)   rotate(-4deg); }
+}
+
+.astronaut {
+  animation: astronaut-float 7s ease-in-out infinite;
+  filter: drop-shadow(0 0 32px rgba(6,182,212,0.25))
+          drop-shadow(0 0 80px rgba(6,182,212,0.10));
+}
+
 /* ─── Marquee ───────────────────────────────────────────────── */
 @keyframes marquee {
   from { transform: translateX(0); }

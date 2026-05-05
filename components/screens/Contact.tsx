@@ -20,11 +20,11 @@ export default function ContactForm() {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle"
+    "idle",
   );
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -41,7 +41,7 @@ export default function ContactForm() {
           from_email: formData.email,
           message: formData.message,
         },
-        "4cza809aNVYTuAJge"
+        "4cza809aNVYTuAJge",
       );
       setStatus("sent");
       setFormData({ name: "", email: "", message: "" });
@@ -179,7 +179,7 @@ export default function ContactForm() {
 
             <div>
               <p className="section-label mb-4">Currently at</p>
-              <p className="text-fg text-lg">U:Bit s.r.o</p>
+              <p className="text-fg text-lg">Giovani Essenze, s. r. o.</p>
             </div>
 
             <div>
