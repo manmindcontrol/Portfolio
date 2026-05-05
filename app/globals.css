@@ -2,65 +2,276 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes lights {
-  0% {
-    color: hsl(0, 0%, 100%);
-    text-shadow:
-      0 0 1em hsla(320, 100%, 50%, 0.2),
-      0 0 0.125em hsla(320, 100%, 60%, 0.3),
-      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
-      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+@layer base {
+  :root {
+    --bg: #070d1a;
+    --fg: #eef4ff;
+    --accent: #06b6d4;
+    --muted: #4d6e8a;
+    --border: rgba(255, 255, 255, 0.06);
+    --card-bg: rgba(255, 255, 255, 0.025);
+    --background: #070d1a;
+    --foreground: #eef4ff;
   }
-  
-  30% { 
-    color: hsl(0, 0%, 100%);
-    text-shadow:
-      0 0 1em hsla(320, 100%, 50%, 0.5),
-      0 0 0.125em hsla(320, 100%, 60%, 0.5),
-      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
-      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #070d1a;
   }
-  
-  40% { 
-    color: hsl(0, 0%, 100%);
-    text-shadow:
-      0 0 1em hsla(320, 100%, 50%, 0.5),
-      0 0 0.125em hsla(320, 100%, 90%, 0.5),
-      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
-      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+
+  body {
+    background-color: #070d1a;
+    color: #eef4ff;
+    overflow-x: hidden;
   }
-  
-  70% {
-    color: hsl(0, 0%, 100%);
-    text-shadow:
-      0 0 1em hsla(320, 100%, 50%, 0.5),
-      0 0 0.125em hsla(320, 100%, 60%, 0.5),
-      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
-      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+
+  /* Hide default cursor on non-touch devices */
+  @media (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
   }
-  
-  100% {
-    color: hsl(0, 0%, 100%);
-    text-shadow:
-      0 0 1em hsla(320, 100%, 50%, 0.2),
-      0 0 0.125em hsla(320, 100%, 60%, 0.3),
-      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
-      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+
+  ::selection {
+    background: #06b6d4;
+    color: #070d1a;
   }
 }
 
-#name {
-  animation: lights 5s 750ms linear infinite;
-  margin: auto;
-  transition: transform 0.3s;
+/* ─── Custom Cursor ─────────────────────────────────────────── */
+.cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #f2f0eb;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+  will-change: left, top;
 }
 
-#name:hover {
-  transform: scale(1.10);
+.cursor-ring {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(242, 240, 235, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  will-change: left, top;
 }
 
-.glass-morphism {
+.cursor-dot.is-hover {
+  width: 10px;
+  height: 10px;
+  background: #06b6d4;
+}
+
+.cursor-ring.is-hover {
+  width: 52px;
+  height: 52px;
+  border-color: #06b6d4;
+}
+
+/* ─── Background Orbs ───────────────────────────────────────── */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.55;
+}
+
+.bg-orb-1 {
+  width: 700px;
+  height: 700px;
+  top: -180px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.28) 0%, transparent 70%);
+  animation: orb-drift-1 22s ease-in-out infinite;
+}
+
+.bg-orb-2 {
+  width: 600px;
+  height: 600px;
+  bottom: -150px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.22) 0%, transparent 70%);
+  animation: orb-drift-2 28s ease-in-out infinite;
+}
+
+.bg-orb-3 {
+  width: 400px;
+  height: 400px;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+  animation: orb-drift-3 18s ease-in-out infinite;
+}
+
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(40px, -60px) scale(1.06); }
+  66%       { transform: translate(-30px, 40px) scale(0.94); }
+}
+
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-50px, 30px) scale(1.08); }
+  70%       { transform: translate(30px, -40px) scale(0.96); }
+}
+
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50%       { transform: translateX(-50%) scale(1.15); }
+}
+
+/* ─── Glow Pulse ────────────────────────────────────────────── */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.08); }
+}
+
+/* ─── Marquee ───────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ─── Slide Up Reveal ───────────────────────────────────────── */
+.reveal-up {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-up > span {
+  display: block;
+  transform: translateY(110%);
+  animation: slide-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slide-up {
+  to { transform: translateY(0); }
+}
+
+/* ─── Hover Underline ───────────────────────────────────────── */
+.hover-line {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-line::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #06b6d4;
+  transition: width 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.hover-line:hover::after {
+  width: 100%;
+}
+
+/* ─── Glass ─────────────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ─── Orb Gradient ──────────────────────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* ─── Project Card Hover ────────────────────────────────────── */
+.project-card {
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.project-card .card-img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.project-card:hover .card-img {
+  transform: scale(1.04);
+}
+
+/* ─── Accent Pill ───────────────────────────────────────────── */
+.accent-btn {
+  background: #06b6d4;
+  color: #070d1a;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.accent-btn:hover {
+  background: #22d3ee;
+  transform: scale(1.04);
+}
+
+/* ─── Outline Pill ──────────────────────────────────────────── */
+.outline-btn {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  color: #f2f0eb;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.outline-btn:hover {
+  border-color: rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: scale(1.04);
+}
+
+/* ─── Input Focus ───────────────────────────────────────────── */
+.form-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f2f0eb;
+  border-radius: 12px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.form-input:focus {
+  border-color: #06b6d4;
+  background: rgba(6, 182, 212, 0.04);
+}
+
+/* ─── Section Divider ───────────────────────────────────────── */
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
